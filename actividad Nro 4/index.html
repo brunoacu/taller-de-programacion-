@@ -8,11 +8,21 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" />
   </head>
   <body>
-    <div class="container mt-3">
-      <div class="row" id="row_card">
-        
-      </div>
+    <div aria-label="Default select example">
+      <select
+        class="form-select col-lg-5 mb-3 btn btn-primary              +"
+        aria-label="Default select example"
+        id="slt_operar"
+      >
+        <option disabled selected value="-1">Seleccione</option>
+        <option value="/category/electronics">electronics</option>
+        <option value="/category/jewelery">jewelery</option>
+        <option value="/category/men's clothing">men's clothing</option>
+        <option value="/category/women's clothing">women's clothing</option>
+      </select>
+      <div class="row" id="row_card"></div>
     </div>
     <script src="main.js" type="module"></script>
   </body>
 </html>
+<!--class="container mt-3"-->
