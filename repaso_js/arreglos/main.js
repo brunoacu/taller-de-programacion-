@@ -26,5 +26,24 @@ lenguaje.unshift("C#");
 console.log(lenguaje);
 
 //como eliminar el primer elemento
-lenguaje.shift()
-console.log(lenguaje    )
+lenguaje.shift();
+console.log(lenguaje);
+
+//como encontrar el indice de un elemento y mostrarlo posteriormente
+let indice = lenguaje.indexOf("JavaScrip"); //encontrar
+console.log(lenguaje[indice]);
+
+//como eliminar un elemento de un arreglo segun su indice
+let indice2 = lenguaje.indexOf("C++");
+let eliminados = lenguaje.splice(indice2, 2);
+console.log(lenguaje);
+console.log("los eliminados fueron los siguientes: " + eliminados);
+
+//como agrego elementos dentro de un arreglo
+lenguaje.splice(indice, 0, "Visual Basic");
+console.log(lenguaje);
+
+//como copiar un arreglo
+let copia = lenguaje.slice();
+copia.push("Ruby");
+console.log(copia);
