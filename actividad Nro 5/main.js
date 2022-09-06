@@ -62,7 +62,7 @@ document.getElementById("btn_imprimir").addEventListener("click", imprmir);
 
 const recorrer_arreglo = () => {
   let items = [];
-  criptos.forEach((element, index) => {
+  criptos.forEach((element) => {
     let item = `
             <li class="list-group-item">${element}</li>
             `;
@@ -94,5 +94,28 @@ const framework = () => {
     Patron:${patron}
     Spa:${spa}
     `);
-}
+};
 document.getElementById("btn_mostrar").addEventListener("click", framework);
+//1)
+const obtener_datos = async () => {
+  const datos = await fetch(
+    "https://www.dolarsi.com/api/api.php?type=valoresprincipales"
+  );
+  const lista_datos = await datos.json();
+  let filas = []
+  lista_datos.forEach((element,index) => {
+    let fila = `
+    <tr>
+    <td>${index + 1}</td>
+    <td>${element.casa.compra}</td>
+    <td>${element.casa.venta}</td>
+    <td>${element.casa.agencia}</td>
+    <td>${element.casa.nombre}</td>
+    </tr>
+          `;
+    filas.push(fila);
+  });
+  document.getElementById("tbl_body").innerHTML = filas.join("");
+};
+
+obtener_datos();
